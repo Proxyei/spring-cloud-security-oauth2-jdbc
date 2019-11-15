@@ -1,0 +1,18 @@
+server:
+  servlet:
+    context-path: /uaa
+  port: 10002
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://127.0.0.1:3309/spring_cloud_security_oauth2_jdbc?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3309/spring_cloud_security_oauth2_jdbc?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: Root123;
+
+mybatis:
+  type-aliases-package: com.xywe.domain
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath*:mybatis/mapper/*.xml
