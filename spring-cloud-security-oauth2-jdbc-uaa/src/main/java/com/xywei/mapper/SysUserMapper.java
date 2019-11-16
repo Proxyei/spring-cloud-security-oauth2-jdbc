@@ -11,4 +11,5 @@ public interface SysUserMapper {
 
     SysUser findUserByUsername(String username);
 
+    SysUser findUserWithRoleByUsername(String username);
 }

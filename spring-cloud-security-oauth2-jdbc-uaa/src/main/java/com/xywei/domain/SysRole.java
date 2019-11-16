@@ -1,7 +1,7 @@
 package com.xywei.domain;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author future
@@ -12,9 +12,9 @@ public class SysRole {
 
     private String id;
     private String roleName;
-    private String role_description;
+    private String roleDescription;
 
-    private Set<SysUser> users = new HashSet<SysUser>();
+    private List<SysUser> users=new ArrayList<SysUser>();
 
     public String getId() {
         return id;
@@ -32,19 +32,19 @@ public class SysRole {
         this.roleName = roleName;
     }
 
-    public String getRole_description() {
-        return role_description;
+    public String getRoleDescription() {
+        return roleDescription;
     }
 
-    public void setRole_description(String role_description) {
-        this.role_description = role_description;
+    public void setRoleDescription(String roleDescription) {
+        this.roleDescription = roleDescription;
     }
 
-    public Set<SysUser> getUsers() {
+    public List<SysUser> getUsers() {
         return users;
     }
 
-    public void setUsers(Set<SysUser> users) {
+    public void setUsers(List<SysUser> users) {
         this.users = users;
     }
 
@@ -53,8 +53,9 @@ public class SysRole {
         return "SysRole{" +
                 "id='" + id + '\'' +
                 ", roleName='" + roleName + '\'' +
-                ", role_description='" + role_description + '\'' +
+                ", roleDescription='" + roleDescription + '\'' +
                 ", users=" + users +
                 '}';
     }
 }
+

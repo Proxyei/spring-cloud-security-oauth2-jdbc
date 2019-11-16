@@ -1,6 +1,8 @@
 package com.xywei.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
+import com.xywei.domain.SysRole;
+
+import java.util.Set;
 
 /**
  * @Author future
@@ -8,4 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @Description
  */
 public interface SysRoleMapper {
+
+   Set<SysRole> findRolesByUserName(String username);
+
 }

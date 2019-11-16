@@ -7,8 +7,39 @@
     <resultMap id="sysUser" type="com.xywei.domain.SysUser">
     </resultMap>
 
+    <!--用户和角色的多对多映射-->
+    <resultMap id="sysUserWithRole" type="com.xywei.domain.SysUser">
+        <id property="id" column="id" javaType="string" jdbcType="VARCHAR"></id>
+        <result property="username" column="username" javaType="string" jdbcType="VARCHAR"></result>
+        <result property="password" column="password" javaType="string" jdbcType="VARCHAR"></result>
+        <result property="accountNonExpired" column="account_non_expired" javaType="boolean"
+                jdbcType="VARCHAR"></result>
+        <result property="accountNonLocked" column="account_non_locked" javaType="boolean" jdbcType="VARCHAR"></result>
+        <result property="credentialsNonExpired" column="credentials_non_expired" javaType="boolean"
+                jdbcType="VARCHAR"></result>
+        <result property="enabled" column="ENABLE" javaType="boolean" jdbcType="VARCHAR"></result>
+        <!--多对多映射角色-->
+        <collection property="roles" ofType="com.xywei.domain.SysRole">
+            <id property="id" column="id"></id>
+            <result property="roleName" column="role_name"></result>
+            <result property="roleDescription" column="role_description"></result>
+
+        </collection>
+
+    </resultMap>
+
+
     <select id="findUserByUsername" parameterType="string" resultMap="sysUser">
-        select * from sys_user where username=#{username}
+        select * from sys_user
+        where username=#{username}
     </select>
 
+    <select id="findUserWithRoleByUsername" parameterType="string" resultMap="sysUserWithRole">
+        select u.*,r.* from sys_user u
+        inner join sys_user_role ur
+        inner  join  sys_role r
+        on u.id=ur.user_id
+        and ur.role_id=r.id
+        where  u.username=#{username}
+    </select>
 </mapper>

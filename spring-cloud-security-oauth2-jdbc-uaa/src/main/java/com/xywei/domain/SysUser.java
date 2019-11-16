@@ -1,7 +1,7 @@
 package com.xywei.domain;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author future
@@ -17,7 +17,7 @@ public class SysUser {
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
     private boolean enabled;
-    private Set<SysRole> roles = new HashSet<SysRole>();
+    private List<SysRole> roles = new ArrayList<SysRole>();
 
     public String getId() {
         return id;
@@ -75,11 +75,11 @@ public class SysUser {
         this.enabled = enabled;
     }
 
-    public Set<SysRole> getRoles() {
+    public List<SysRole> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<SysRole> roles) {
+    public void setRoles(List<SysRole> roles) {
         this.roles = roles;
     }
 

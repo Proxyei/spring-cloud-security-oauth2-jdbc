@@ -16,4 +16,9 @@ public class TestHelloworld {
         return "helloworld";
     }
 
+    @GetMapping("/helloworld")
+    public String hellowrold() {
+        return "结果经过spring security认证的helloworld!";
+    }
+
 }

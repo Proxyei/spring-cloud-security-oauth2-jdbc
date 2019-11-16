@@ -16,3 +16,9 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
   mapper-locations: classpath*:mybatis/mapper/*.xml
+
+logging:
+  level:
+    com:
+      xywei:
+        mapper: debug
