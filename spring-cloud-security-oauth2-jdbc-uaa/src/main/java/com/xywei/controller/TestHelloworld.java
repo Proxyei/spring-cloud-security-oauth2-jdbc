@@ -1,5 +1,6 @@
 package com.xywei.controller;
 
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestHelloworld {
 
     @GetMapping("/hello")
-    public String sayHello() {
-        return "helloworld";
+    public String sayHello(String code) {
+        return "helloworld! " + (StringUtils.isEmpty(code) ? "" : code);
     }
 
     @GetMapping("/helloworld")

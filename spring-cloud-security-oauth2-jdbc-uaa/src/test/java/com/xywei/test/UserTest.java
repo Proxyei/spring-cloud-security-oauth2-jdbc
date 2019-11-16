@@ -24,7 +24,7 @@ public class UserTest extends AppTestRunner {
 
     @Test
     public void testEncode() {
-        String encode = passwordEncoder.encode("a");
+        String encode = passwordEncoder.encode("client_a");
         log.info("加密后密码：{}", encode);
     }
 

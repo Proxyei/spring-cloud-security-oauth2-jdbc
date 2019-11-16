@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    username: root
+    password: Root123;
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3309/spring_cloud_security_oauth2_jdbc?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+
+server:
+  port: 10001
+  servlet:
+    context-path: /resources
