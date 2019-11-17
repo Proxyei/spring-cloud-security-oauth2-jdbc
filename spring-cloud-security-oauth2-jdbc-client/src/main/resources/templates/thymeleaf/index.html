@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<h3 th:text="${hello}">使用了thymeleaf目录</h3>
+<div>我是系统A，请求得到用户client_a的授权，从而访问resources服务器</div>
+<div>直接访问目标，会被拒绝！不信试试：
+    <a href="#" th:href="@{http://localhost:10001/resources/user(access_token=${access_token})}"
+       th:if="${access_token} !=null and ${msg}==null"><span th:text="已被授权，可以直接访问"></span></a>
+    <a href="#" th:href="@{http://localhost:10001/resources/user}"
+       th:if="${access_token} ==null and ${msg}==null"><span th:text="就试试"></span></a>
+    <div><a href="#" th:href="@{/client_a/authorization}" target="_self" th:if="${msg} !=null">授权码过期，请重新请求授权</a></div>
+</div>
+<div><a href="#" th:href="@{/client_a/authorization}" target="_self">请求用户client_a授权</a></div>
+</body>
+</html>

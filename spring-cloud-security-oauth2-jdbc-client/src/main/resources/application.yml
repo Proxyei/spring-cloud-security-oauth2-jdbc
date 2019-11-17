@@ -1,0 +1,9 @@
+server:
+  port: 10000
+  servlet:
+    context-path: /client
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/thymeleaf/
+    suffix: .html
+    cache: false
